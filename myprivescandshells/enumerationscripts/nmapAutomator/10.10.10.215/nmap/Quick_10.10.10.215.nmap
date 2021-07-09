@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Mon Dec 21 21:28:35 2020 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.215.nmap 10.10.10.215
+Nmap scan report for academy.htb (10.10.10.215)
+Host is up (0.061s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Mon Dec 21 21:28:36 2020 -- 1 IP address (1 host up) scanned in 1.05 seconds

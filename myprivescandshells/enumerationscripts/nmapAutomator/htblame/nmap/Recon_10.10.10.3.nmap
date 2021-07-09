@@ -1,0 +1,12 @@
+[0;32m---------------------Recon Recommendations----------------------
+[0m
+[0m
+[0;33mSMB Recon:
+[0m
+smbmap -H 10.10.10.3 | tee recon/smbmap_10.10.10.3.txt
+smbclient -L "//10.10.10.3/" -U "guest"% | tee recon/smbclient_10.10.10.3.txt
+enum4linux -a 10.10.10.3 | tee recon/enum4linux_10.10.10.3.txt
+
+
+
+

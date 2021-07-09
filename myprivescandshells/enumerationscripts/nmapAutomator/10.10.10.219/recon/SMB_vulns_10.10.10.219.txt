@@ -1,0 +1,14 @@
+# Nmap 7.80 scan initiated Tue Dec  8 23:10:45 2020 as: nmap -Pn -p445 --script vuln -oN recon/SMB_vulns_10.10.10.219.txt 10.10.10.219
+Nmap scan report for 10.10.10.219
+Host is up (0.13s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+
+Host script results:
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+# Nmap done at Tue Dec  8 23:11:21 2020 -- 1 IP address (1 host up) scanned in 36.97 seconds

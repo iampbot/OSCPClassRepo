@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Mon Dec 14 18:39:43 2020 as: nmap -Pn -sCVU --script vulners --script-args mincvss=7.0 -p137 -oN nmap/UDP_10.10.10.4.nmap 10.10.10.4
+Nmap scan report for 10.10.10.4
+Host is up (0.034s latency).
+
+PORT    STATE SERVICE    VERSION
+137/udp open  netbios-ns Microsoft Windows netbios-ns (workgroup: HTB)
+Service Info: Host: LEGACY; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Dec 14 18:39:55 2020 -- 1 IP address (1 host up) scanned in 12.11 seconds

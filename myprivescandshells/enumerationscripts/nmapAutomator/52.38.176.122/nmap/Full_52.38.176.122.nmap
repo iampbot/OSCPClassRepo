@@ -1,0 +1,76 @@
+# Nmap 7.91 scan initiated Sat Feb 27 16:10:33 2021 as: nmap -Pn -sCV -p21,80,137,138,139,443,445,3306, -oN nmap/Full_52.38.176.122.nmap 52.38.176.122
+Nmap scan report for ec2-52-38-176-122.us-west-2.compute.amazonaws.com (52.38.176.122)
+Host is up (0.26s latency).
+
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.0.8 or later
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: PASV IP 10.10.99.10 is not the same as 52.38.176.122
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 10.10.99.60
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp   open  http        nginx 1.15.6
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-server-header: nginx/1.15.6
+|_http-title: EvolveSec Med Center Online
+137/tcp  open  tcpwrapped
+138/tcp  open  tcpwrapped
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+443/tcp  open  ssl/http    Apache httpd 2.2.22 ((Debian))
+| http-robots.txt: 1 disallowed entry 
+|_/heart.jpg
+|_http-server-header: Apache/2.2.22 (Debian)
+|_http-title: The Best Website
+| ssl-cert: Subject: commonName=5e073fa71b76
+| Not valid before: 2018-11-16T00:32:45
+|_Not valid after:  2028-11-13T00:32:45
+|_ssl-date: 2021-02-27T21:12:17+00:00; +36s from scanner time.
+445/tcp  open  netbios-ssn Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)
+3306/tcp open  mysql       MySQL 5.5.62
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.62
+|   Thread ID: 24
+|   Capabilities flags: 63487
+|   Some Capabilities: FoundRows, SupportsLoadDataLocal, SupportsCompression, ConnectWithDatabase, IgnoreSigpipes, InteractiveClient, Speaks41ProtocolNew, Support41Auth, LongPassword, SupportsTransactions, IgnoreSpaceBeforeParenthesis, Speaks41ProtocolOld, LongColumnFlag, ODBCClient, DontAllowDatabaseTableColumn, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins
+|   Status: Autocommit
+|   Salt: #Yvi+7s_aH'&*AF|^Bl|
+|_  Auth Plugin Name: mysql_native_password
+Service Info: Hosts: Next, 31A29D468A3B
+
+Host script results:
+|_clock-skew: mean: 36s, deviation: 1s, median: 35s
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)
+|   Computer name: 31a29d468a3b
+|   NetBIOS computer name: 31A29D468A3B\x00
+|   Domain name: \x00
+|   FQDN: 31a29d468a3b
+|_  System time: 2021-02-27T21:11:39+00:00
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-02-27T21:11:38
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb 27 16:11:44 2021 -- 1 IP address (1 host up) scanned in 70.39 seconds

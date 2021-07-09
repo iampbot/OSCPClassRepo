@@ -1,0 +1,11 @@
+ffuf -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.102.39:3333/FUZZ -e .php,.html,.txt
+
+-c will colorie the output
+-w is the wordlist
+-u is the url
+FUZZ is where you want it to directory bruteforce
+-e is extensions (must be seperated by commas)
+
+https://github.com/ffuf/ffuf has other options for things such as brute forcing post data pages as well as get data pages
+
+

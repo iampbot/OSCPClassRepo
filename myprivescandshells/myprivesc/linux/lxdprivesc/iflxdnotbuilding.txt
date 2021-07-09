@@ -1,0 +1,4 @@
+http://uk.alpinelinux.org/alpine/
+dd this to rootfs/usr/share/alpine-mirrors/MIRRORS.txt
+
+should build now!

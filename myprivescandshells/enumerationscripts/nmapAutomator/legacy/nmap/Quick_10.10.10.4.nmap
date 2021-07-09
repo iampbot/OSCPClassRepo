@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Mon Dec 14 18:35:53 2020 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.4.nmap 10.10.10.4
+Nmap scan report for 10.10.10.4
+Host is up (0.040s latency).
+Not shown: 999 filtered ports
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+# Nmap done at Mon Dec 14 18:36:44 2020 -- 1 IP address (1 host up) scanned in 50.57 seconds

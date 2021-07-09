@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Tue Dec  8 12:56:39 2020 as: nmap -Pn -sCVU --script vulners --script-args mincvss=7.0 -p111,123 -oN nmap/UDP_10.10.10.7.nmap 10.10.10.7
+Nmap scan report for 10.10.10.7
+Host is up (0.13s latency).
+
+PORT    STATE SERVICE VERSION
+111/udp open  rpcbind 2 (RPC #100000)
+123/udp open  ntp     NTP v4 (secondary server)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Dec  8 12:56:53 2020 -- 1 IP address (1 host up) scanned in 13.26 seconds

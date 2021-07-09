@@ -1,0 +1,156 @@
+# Nmap 7.91 scan initiated Sat Feb 27 16:12:17 2021 as: nmap -Pn -sV --script vuln -p21,80,137,138,139,443,445,3306, -oN nmap/Vulns_52.38.176.122.nmap 52.38.176.122
+Nmap scan report for ec2-52-38-176-122.us-west-2.compute.amazonaws.com (52.38.176.122)
+Host is up (0.30s latency).
+
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.0.8 or later
+|_sslv2-drown: 
+80/tcp   open  http        nginx 1.15.6
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=ec2-52-38-176-122.us-west-2.compute.amazonaws.com
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://ec2-52-38-176-122.us-west-2.compute.amazonaws.com:80/
+|     Form id: 
+|     Form action: login.php
+|     
+|     Path: http://ec2-52-38-176-122.us-west-2.compute.amazonaws.com:80/forgot.php?f=false
+|     Form id: 
+|     Form action: forgot.php
+|     
+|     Path: http://ec2-52-38-176-122.us-west-2.compute.amazonaws.com:80/index.php
+|     Form id: 
+|     Form action: login.php
+|     
+|     Path: http://ec2-52-38-176-122.us-west-2.compute.amazonaws.com:80/forgot.php
+|     Form id: 
+|_    Form action: forgot.php
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /blog/: Blog
+|   /login.php: Possible admin folder
+|   /blog/wp-login.php: Wordpress login page.
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+|   /images/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+|_  /include/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+| http-internal-ip-disclosure: 
+|_  Internal IP Leaked: 172.20.200.30
+|_http-server-header: nginx/1.15.6
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   nginx 1.15.6: 
+|     	CVE-2019-9513	7.8	https://vulners.com/cve/CVE-2019-9513
+|     	CVE-2019-9511	7.8	https://vulners.com/cve/CVE-2019-9511
+|_    	CVE-2019-9516	6.8	https://vulners.com/cve/CVE-2019-9516
+137/tcp  open  tcpwrapped
+138/tcp  open  tcpwrapped
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+443/tcp  open  ssl/http    Apache httpd 2.2.22 ((Debian))
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|_  /robots.txt: Robots file
+|_http-server-header: Apache/2.2.22 (Debian)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| ssl-ccs-injection: 
+|   VULNERABLE:
+|   SSL/TLS MITM vulnerability (CCS Injection)
+|     State: VULNERABLE
+|     Risk factor: High
+|       OpenSSL before 0.9.8za, 1.0.0 before 1.0.0m, and 1.0.1 before 1.0.1h
+|       does not properly restrict processing of ChangeCipherSpec messages,
+|       which allows man-in-the-middle attackers to trigger use of a zero
+|       length master key in certain OpenSSL-to-OpenSSL communications, and
+|       consequently hijack sessions or obtain sensitive information, via
+|       a crafted TLS handshake, aka the "CCS Injection" vulnerability.
+|           
+|     References:
+|       http://www.openssl.org/news/secadv_20140605.txt
+|       http://www.cvedetails.com/cve/2014-0224
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224
+| ssl-heartbleed: 
+|   VULNERABLE:
+|   The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. It allows for stealing information intended to be protected by SSL/TLS encryption.
+|     State: VULNERABLE
+|     Risk factor: High
+|       OpenSSL versions 1.0.1 and 1.0.2-beta releases (including 1.0.1f and 1.0.2-beta1) of OpenSSL are affected by the Heartbleed bug. The bug allows for reading memory of systems protected by the vulnerable OpenSSL versions and could allow for disclosure of otherwise encrypted confidential information as well as the encryption keys themselves.
+|           
+|     References:
+|       http://cvedetails.com/cve/2014-0160/
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160
+|_      http://www.openssl.org/news/secadv_20140407.txt 
+| ssl-poodle: 
+|   VULNERABLE:
+|   SSL POODLE information leak
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2014-3566  BID:70574
+|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other
+|           products, uses nondeterministic CBC padding, which makes it easier
+|           for man-in-the-middle attackers to obtain cleartext data via a
+|           padding-oracle attack, aka the "POODLE" issue.
+|     Disclosure date: 2014-10-14
+|     Check results:
+|       TLS_RSA_WITH_AES_128_CBC_SHA
+|     References:
+|       https://www.securityfocus.com/bid/70574
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566
+|       https://www.openssl.org/~bodo/ssl-poodle.pdf
+|_      https://www.imperialviolet.org/2014/10/14/poodle.html
+|_sslv2-drown: 
+| vulners: 
+|   cpe:/a:apache:http_server:2.2.22: 
+|     	SSV:60913	7.5	https://vulners.com/seebug/SSV:60913	*EXPLOIT*
+|     	CVE-2017-7679	7.5	https://vulners.com/cve/CVE-2017-7679
+|     	CVE-2017-7668	7.5	https://vulners.com/cve/CVE-2017-7668
+|     	CVE-2017-3169	7.5	https://vulners.com/cve/CVE-2017-3169
+|     	CVE-2017-3167	7.5	https://vulners.com/cve/CVE-2017-3167
+|     	CVE-2013-2249	7.5	https://vulners.com/cve/CVE-2013-2249
+|     	CVE-2018-1312	6.8	https://vulners.com/cve/CVE-2018-1312
+|     	CVE-2017-9788	6.4	https://vulners.com/cve/CVE-2017-9788
+|     	SSV:60788	5.1	https://vulners.com/seebug/SSV:60788	*EXPLOIT*
+|     	CVE-2013-1862	5.1	https://vulners.com/cve/CVE-2013-1862
+|     	SSV:96537	5.0	https://vulners.com/seebug/SSV:96537	*EXPLOIT*
+|     	SSV:62058	5.0	https://vulners.com/seebug/SSV:62058	*EXPLOIT*
+|     	SSV:61874	5.0	https://vulners.com/seebug/SSV:61874	*EXPLOIT*
+|     	MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED	5.0	https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED	*EXPLOIT*
+|     	EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D	5.0	https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D	*EXPLOIT*
+|     	CVE-2017-9798	5.0	https://vulners.com/cve/CVE-2017-9798
+|     	CVE-2014-0231	5.0	https://vulners.com/cve/CVE-2014-0231
+|     	CVE-2014-0098	5.0	https://vulners.com/cve/CVE-2014-0098
+|     	CVE-2013-6438	5.0	https://vulners.com/cve/CVE-2013-6438
+|     	CVE-2013-5704	5.0	https://vulners.com/cve/CVE-2013-5704
+|     	1337DAY-ID-28573	5.0	https://vulners.com/zdt/1337DAY-ID-28573	*EXPLOIT*
+|     	SSV:60905	4.3	https://vulners.com/seebug/SSV:60905	*EXPLOIT*
+|     	SSV:60657	4.3	https://vulners.com/seebug/SSV:60657	*EXPLOIT*
+|     	SSV:60653	4.3	https://vulners.com/seebug/SSV:60653	*EXPLOIT*
+|     	SSV:60345	4.3	https://vulners.com/seebug/SSV:60345	*EXPLOIT*
+|     	CVE-2016-4975	4.3	https://vulners.com/cve/CVE-2016-4975
+|     	CVE-2013-1896	4.3	https://vulners.com/cve/CVE-2013-1896
+|     	CVE-2012-4558	4.3	https://vulners.com/cve/CVE-2012-4558
+|     	CVE-2012-3499	4.3	https://vulners.com/cve/CVE-2012-3499
+|     	CVE-2012-2687	2.6	https://vulners.com/cve/CVE-2012-2687
+|_    	EDB-ID:42745	0.0	https://vulners.com/exploitdb/EDB-ID:42745	*EXPLOIT*
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+3306/tcp open  mysql       MySQL 5.5.62
+|_sslv2-drown: 
+Service Info: Hosts: Next, 31A29D468A3B
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: false
+| smb-vuln-regsvc-dos: 
+|   VULNERABLE:
+|   Service regsvc in Microsoft Windows systems vulnerable to denial of service
+|     State: VULNERABLE
+|       The service regsvc in Microsoft Windows 2000 systems is vulnerable to denial of service caused by a null deference
+|       pointer. This script will crash the service if it is vulnerable. This vulnerability was discovered by Ron Bowes
+|       while working on smb-enum-sessions.
+|_          
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb 27 16:27:47 2021 -- 1 IP address (1 host up) scanned in 930.41 seconds

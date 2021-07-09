@@ -1,0 +1,4 @@
+[*] Reverse Look-up of a Range
+[*] Performing Reverse Lookup from 127.0.0.0 to 127.0.0.255
+[+] {'type': 'PTR', 'name': 'localhost', 'address': '127.0.0.1'}
+[+] 1 Records Found

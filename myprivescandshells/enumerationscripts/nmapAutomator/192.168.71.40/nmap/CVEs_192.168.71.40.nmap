@@ -1,0 +1,25 @@
+# Nmap 7.91 scan initiated Sun Feb 14 13:58:24 2021 as: nmap -Pn -sV --script vulners --script-args mincvss=7.0 -p53,135,139,445,3389,5357,49152,49153,49154,49155,49156,49157,49158 -oN nmap/CVEs_192.168.71.40.nmap 192.168.71.40
+Nmap scan report for 192.168.71.40
+Host is up (0.044s latency).
+
+PORT      STATE SERVICE            VERSION
+53/tcp    open  domain             Microsoft DNS 6.0.6001 (17714650) (Windows Server 2008 SP1)
+135/tcp   open  msrpc?
+139/tcp   open  netbios-ssn?
+445/tcp   open  microsoft-ds       Microsoft Windows Server 2008 R2 microsoft-ds (workgroup: WORKGROUP)
+3389/tcp  open  ssl/ms-wbt-server?
+5357/tcp  open  http               Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+49155/tcp open  unknown
+49156/tcp open  unknown
+49157/tcp open  unknown
+49158/tcp open  unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port139-TCP:V=7.91%I=7%D=2/14%Time=602972E2%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,5,"\x83\0\0\x01\x8f");
+Service Info: Host: INTERNAL; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008::sp1, cpe:/o:microsoft:windows_server_2008:r2, cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Feb 14 13:59:01 2021 -- 1 IP address (1 host up) scanned in 36.71 seconds

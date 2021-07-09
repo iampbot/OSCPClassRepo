@@ -1,0 +1,37 @@
+Version: [32m2.0.7-static[0m
+OpenSSL 1.1.1j-dev  xx XXX xxxx
+[0m
+[32mConnected to 52.38.176.122[0m
+
+Testing SSL server [32m52.38.176.122[0m on port [32m443[0m using SNI name [32m52.38.176.122[0m
+
+  [1;34mSSL/TLS Protocols:[0m
+SSLv2     [32mdisabled[0m
+SSLv3     [31menabled[0m
+TLSv1.0   [32mdisabled[0m
+TLSv1.1   disabled
+TLSv1.2   disabled
+TLSv1.3   [33mdisabled[0m
+
+  [1;34mTLS Fallback SCSV:[0m
+Server [31mdoes not[0m support TLS Fallback SCSV
+
+  [1;34mTLS renegotiation:[0m
+[32mSecure[0m session renegotiation supported
+
+  [1;34mTLS Compression:[0m
+Compression [32mdisabled[0m
+
+  [1;34mHeartbleed:[0m
+
+  [1;34mSupported Server Cipher(s):[0m
+
+  [1;34mSSL Certificate:[0m
+Signature Algorithm: [32msha256WithRSAEncryption[0m
+RSA Key Strength:    2048
+
+Subject:  5e073fa71b76
+Issuer:   [31m5e073fa71b76[0m
+
+Not valid before: [32mNov 16 00:32:45 2018 GMT[0m
+Not valid after:  [32mNov 13 00:32:45 2028 GMT[0m

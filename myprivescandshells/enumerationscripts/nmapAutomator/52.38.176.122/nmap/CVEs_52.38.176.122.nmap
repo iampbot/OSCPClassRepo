@@ -1,0 +1,43 @@
+# Nmap 7.91 scan initiated Sat Feb 27 16:11:44 2021 as: nmap -Pn -sV --script vulners --script-args mincvss=7.0 -p21,80,137,138,139,443,445,3306, -oN nmap/CVEs_52.38.176.122.nmap 52.38.176.122
+Nmap scan report for ec2-52-38-176-122.us-west-2.compute.amazonaws.com (52.38.176.122)
+Host is up (0.30s latency).
+
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.0.8 or later
+80/tcp   open  http        nginx 1.15.6
+|_http-server-header: nginx/1.15.6
+| vulners: 
+|   nginx 1.15.6: 
+|     	CVE-2019-9513	7.8	https://vulners.com/cve/CVE-2019-9513
+|_    	CVE-2019-9511	7.8	https://vulners.com/cve/CVE-2019-9511
+137/tcp  open  tcpwrapped
+138/tcp  open  tcpwrapped
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+443/tcp  open  ssl/http    Apache httpd 2.2.22 ((Debian))
+|_http-server-header: Apache/2.2.22 (Debian)
+| vulners: 
+|   cpe:/a:apache:http_server:2.2.22: 
+|     	SSV:60913	7.5	https://vulners.com/seebug/SSV:60913	*EXPLOIT*
+|     	CVE-2017-7679	7.5	https://vulners.com/cve/CVE-2017-7679
+|     	CVE-2017-7668	7.5	https://vulners.com/cve/CVE-2017-7668
+|     	CVE-2017-3169	7.5	https://vulners.com/cve/CVE-2017-3169
+|     	CVE-2017-3167	7.5	https://vulners.com/cve/CVE-2017-3167
+|     	CVE-2013-2249	7.5	https://vulners.com/cve/CVE-2013-2249
+|     	SSV:60788	5.1	https://vulners.com/seebug/SSV:60788	*EXPLOIT*
+|     	SSV:96537	5.0	https://vulners.com/seebug/SSV:96537	*EXPLOIT*
+|     	SSV:62058	5.0	https://vulners.com/seebug/SSV:62058	*EXPLOIT*
+|     	SSV:61874	5.0	https://vulners.com/seebug/SSV:61874	*EXPLOIT*
+|     	MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED	5.0	https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED	*EXPLOIT*
+|     	EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D	5.0	https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D	*EXPLOIT*
+|     	1337DAY-ID-28573	5.0	https://vulners.com/zdt/1337DAY-ID-28573	*EXPLOIT*
+|     	SSV:60905	4.3	https://vulners.com/seebug/SSV:60905	*EXPLOIT*
+|     	SSV:60657	4.3	https://vulners.com/seebug/SSV:60657	*EXPLOIT*
+|     	SSV:60653	4.3	https://vulners.com/seebug/SSV:60653	*EXPLOIT*
+|     	SSV:60345	4.3	https://vulners.com/seebug/SSV:60345	*EXPLOIT*
+|_    	EDB-ID:42745	0.0	https://vulners.com/exploitdb/EDB-ID:42745	*EXPLOIT*
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+3306/tcp open  mysql       MySQL 5.5.62
+Service Info: Hosts: Next, 31A29D468A3B
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Feb 27 16:12:17 2021 -- 1 IP address (1 host up) scanned in 32.91 seconds

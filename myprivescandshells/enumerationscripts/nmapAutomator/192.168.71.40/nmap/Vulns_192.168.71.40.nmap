@@ -1,0 +1,50 @@
+# Nmap 7.91 scan initiated Sun Feb 14 13:59:01 2021 as: nmap -Pn -sV --script vuln -p53,135,139,445,3389,5357,49152,49153,49154,49155,49156,49157,49158 -oN nmap/Vulns_192.168.71.40.nmap 192.168.71.40
+Nmap scan report for 192.168.71.40
+Host is up (0.047s latency).
+
+PORT      STATE    SERVICE       VERSION
+53/tcp    filtered domain
+135/tcp   filtered msrpc
+139/tcp   open     tcpwrapped
+|_smb-vuln-webexec: ERROR: Script execution failed (use -d to debug)
+445/tcp   filtered microsoft-ds
+3389/tcp  filtered ms-wbt-server
+5357/tcp  filtered wsdapi
+49152/tcp filtered unknown
+49153/tcp filtered unknown
+49154/tcp filtered unknown
+49155/tcp filtered unknown
+49156/tcp filtered unknown
+49157/tcp filtered unknown
+49158/tcp filtered unknown
+
+Host script results:
+|_samba-vuln-cve-2012-1182: ERROR: Script execution failed (use -d to debug)
+|_smb-double-pulsar-backdoor: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-conficker: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-cve-2017-7494: ERROR: Script execution failed (use -d to debug)
+| smb-vuln-cve2009-3103: 
+|   VULNERABLE:
+|   SMBv2 exploit (CVE-2009-3103, Microsoft Security Advisory 975497)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2009-3103
+|           Array index error in the SMBv2 protocol implementation in srv2.sys in Microsoft Windows Vista Gold, SP1, and SP2,
+|           Windows Server 2008 Gold and SP2, and Windows 7 RC allows remote attackers to execute arbitrary code or cause a
+|           denial of service (system crash) via an & (ampersand) character in a Process ID High header field in a NEGOTIATE
+|           PROTOCOL REQUEST packet, which triggers an attempted dereference of an out-of-bounds memory location,
+|           aka "SMBv2 Negotiation Vulnerability."
+|           
+|     Disclosure date: 2009-09-08
+|     References:
+|       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3103
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3103
+|_smb-vuln-ms06-025: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-ms07-029: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-ms08-067: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-ms17-010: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-regsvc-dos: ERROR: Script execution failed (use -d to debug)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Feb 14 13:59:35 2021 -- 1 IP address (1 host up) scanned in 34.63 seconds

@@ -1,0 +1,41 @@
+these are for when you catch a reverse shell on you netcat listener for linux!!!
+
+best shells:
+
+STTY RAW -ECHO SHELL:
+after catching the listener enter these commands:
+1.) python -c 'import pty;pty.spawn("/bin/bash")'
+2.) ^Z (ctrl z)
+3.) stty raw -echo
+4.) fg (will not be able to see this being entered)
+5.) press enter a couple of times until you get shell
+
+PYTHON BASH SHELL:
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+PYTHON3 BASH SHELL:
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+EXPORT SHELL:
+export TERM=xterm
+
+ANOTHER EXPORT SHELL:
+export TERM=screen
+
+will allow you to use an editor like vi
+
+ANOTHER EXPORT SHELL:
+export TERM=xterm-256-color
+
+lower shells:
+
+BASH:
+
+bash -i
+
+only use this if python doesnt work
+
+WHEN SSHing and you cant cd:
+ssh user@targetip -t "bash --noprofile"
+
+this will allow you to cd and run sudo,etc

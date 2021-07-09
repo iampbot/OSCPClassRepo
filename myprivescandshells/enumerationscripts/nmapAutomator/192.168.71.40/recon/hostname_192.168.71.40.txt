@@ -1,0 +1,6 @@
+Using domain server:
+Name: 192.168.71.40
+Address: 192.168.71.40#53
+Aliases: 
+
+Host 40.71.168.192.in-addr.arpa not found: 2(SERVFAIL)

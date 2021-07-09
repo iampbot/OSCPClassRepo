@@ -1,0 +1,28 @@
+[0;32m---------------------Recon Recommendations----------------------
+[0m
+[0m
+[0;33mWeb Servers Recon:
+[0m
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u http://52.38.176.122:80 -o recon/gobuster_52.38.176.122_80.txt
+nikto -host 52.38.176.122:80 | tee recon/nikto_52.38.176.122_80.txt
+
+sslscan 52.38.176.122 | tee recon/sslscan_52.38.176.122_443.txt
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u https://52.38.176.122:443 -o recon/gobuster_52.38.176.122_443.txt
+nikto -host https://52.38.176.122:443 -ssl | tee recon/nikto_52.38.176.122_443.txt
+
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u http://52.38.176.122:80 -o recon/gobuster_52.38.176.122_80.txt
+nikto -host 52.38.176.122:80 | tee recon/nikto_52.38.176.122_80.txt
+
+sslscan 52.38.176.122 | tee recon/sslscan_52.38.176.122_443.txt
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u https://52.38.176.122:443 -o recon/gobuster_52.38.176.122_443.txt
+nikto -host https://52.38.176.122:443 -ssl | tee recon/nikto_52.38.176.122_443.txt
+
+[0m
+[0;33mSMB Recon:
+[0m
+smbmap -H 52.38.176.122 | tee recon/smbmap_52.38.176.122.txt
+smbclient -L "//52.38.176.122/" -U "guest"% | tee recon/smbclient_52.38.176.122.txt
+
+
+
+

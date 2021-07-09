@@ -1,0 +1,30 @@
+[0;32m---------------------Recon Recommendations----------------------
+[0m
+[0m
+[0;33mWeb Servers Recon:
+[0m
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u http://10.10.10.123:80 -o recon/gobuster_10.10.10.123_80.txt
+nikto -host 10.10.10.123:80 | tee recon/nikto_10.10.10.123_80.txt
+
+sslscan 10.10.10.123 | tee recon/sslscan_10.10.10.123_443.txt
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u https://10.10.10.123:443 -o recon/gobuster_10.10.10.123_443.txt
+nikto -host https://10.10.10.123:443 -ssl | tee recon/nikto_10.10.10.123_443.txt
+
+[0m
+[0;33mSMB Recon:
+[0m
+smbmap -H 10.10.10.123 | tee recon/smbmap_10.10.10.123.txt
+smbclient -L "//10.10.10.123/" -U "guest"% | tee recon/smbclient_10.10.10.123.txt
+enum4linux -a 10.10.10.123 | tee recon/enum4linux_10.10.10.123.txt
+
+[0m
+[0;33mDNS Recon:
+[0m
+host -l 10.10.10.123 10.10.10.123 | tee recon/hostname_10.10.10.123.txt
+dnsrecon -r 10.10.10.0/24 -n 10.10.10.123 | tee recon/dnsrecon_10.10.10.123.txt
+dnsrecon -r 127.0.0.0/24 -n 10.10.10.123 | tee recon/dnsrecon-local_10.10.10.123.txt
+dig -x 10.10.10.123 @10.10.10.123 | tee recon/dig_10.10.10.123.txt
+
+
+
+

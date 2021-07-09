@@ -1,0 +1,118 @@
+# Nmap 7.80 scan initiated Tue Dec  8 13:06:51 2020 as: nmap -Pn -sV --script vulners --script-args mincvss=7.0 -p4445,10000,22,25,80,110,111,143,443,879,993,995,3306,4190,4559,5038, -oN nmap/CVEs_10.10.10.7.nmap 10.10.10.7
+Nmap scan report for 10.10.10.7
+Host is up (0.14s latency).
+
+PORT      STATE SERVICE    VERSION
+22/tcp    open  ssh        OpenSSH 4.3 (protocol 2.0)
+| vulners: 
+|   OpenSSH 4.3: 
+|     	SECURITYVULNS:VULN:6657	9.3	https://vulners.com/securityvulns/SECURITYVULNS:VULN:6657
+|     	OSVDB:29264	9.3	https://vulners.com/osvdb/OSVDB:29264
+|     	OSVDB:29152	7.8	https://vulners.com/osvdb/OSVDB:29152
+|     	EDB-ID:2444	7.8	https://vulners.com/exploitdb/EDB-ID:2444	*EXPLOIT*
+|_    	SSV:3188	6.9	https://vulners.com/seebug/SSV:3188	*EXPLOIT*
+25/tcp    open  smtp       Postfix smtpd
+80/tcp    open  http       Apache httpd 2.2.3
+|_http-server-header: Apache/2.2.3 (CentOS)
+|_https-redirect: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:apache:http_server:2.2.3: 
+|     	SSV:69341	10.0	https://vulners.com/seebug/SSV:69341	*EXPLOIT*
+|     	SSV:19282	10.0	https://vulners.com/seebug/SSV:19282	*EXPLOIT*
+|     	SSV:19236	10.0	https://vulners.com/seebug/SSV:19236	*EXPLOIT*
+|     	PACKETSTORM:86964	10.0	https://vulners.com/packetstorm/PACKETSTORM:86964	*EXPLOIT*
+|     	MSF:AUXILIARY/DOS/HTTP/APACHE_MOD_ISAPI	10.0	https://vulners.com/metasploit/MSF:AUXILIARY/DOS/HTTP/APACHE_MOD_ISAPI	*EXPLOIT*
+|     	EXPLOITPACK:30ED468EC8BD5B71B2CB93825A852B80	10.0	https://vulners.com/exploitpack/EXPLOITPACK:30ED468EC8BD5B71B2CB93825A852B80	*EXPLOIT*
+|     	EDB-ID:14288	10.0	https://vulners.com/exploitdb/EDB-ID:14288	*EXPLOIT*
+|     	EDB-ID:11650	10.0	https://vulners.com/exploitdb/EDB-ID:11650	*EXPLOIT*
+|     	CVE-2010-0425	10.0	https://vulners.com/cve/CVE-2010-0425
+|     	SSV:72403	7.8	https://vulners.com/seebug/SSV:72403	*EXPLOIT*
+|     	SSV:2820	7.8	https://vulners.com/seebug/SSV:2820	*EXPLOIT*
+|     	SSV:26043	7.8	https://vulners.com/seebug/SSV:26043	*EXPLOIT*
+|     	SSV:20899	7.8	https://vulners.com/seebug/SSV:20899	*EXPLOIT*
+|     	PACKETSTORM:126851	7.8	https://vulners.com/packetstorm/PACKETSTORM:126851	*EXPLOIT*
+|     	PACKETSTORM:123527	7.8	https://vulners.com/packetstorm/PACKETSTORM:123527	*EXPLOIT*
+|     	PACKETSTORM:122962	7.8	https://vulners.com/packetstorm/PACKETSTORM:122962	*EXPLOIT*
+|     	MSF:AUXILIARY/DOS/HTTP/APACHE_RANGE_DOS	7.8	https://vulners.com/metasploit/MSF:AUXILIARY/DOS/HTTP/APACHE_RANGE_DOS	*EXPLOIT*
+|     	EXPLOITPACK:186B5FCF5C57B52642E62C06BABC6F83	7.8	https://vulners.com/exploitpack/EXPLOITPACK:186B5FCF5C57B52642E62C06BABC6F83	*EXPLOIT*
+|     	EDB-ID:18221	7.8	https://vulners.com/exploitdb/EDB-ID:18221	*EXPLOIT*
+|     	EDB-ID:17696	7.8	https://vulners.com/exploitdb/EDB-ID:17696	*EXPLOIT*
+|     	CVE-2011-3192	7.8	https://vulners.com/cve/CVE-2011-3192
+|     	CVE-2007-6423	7.8	https://vulners.com/cve/CVE-2007-6423
+|     	1337DAY-ID-21170	7.8	https://vulners.com/zdt/1337DAY-ID-21170	*EXPLOIT*
+|     	SSV:60913	7.5	https://vulners.com/seebug/SSV:60913	*EXPLOIT*
+|     	CVE-2017-7668	7.5	https://vulners.com/cve/CVE-2017-7668
+|     	CVE-2017-3169	7.5	https://vulners.com/cve/CVE-2017-3169
+|     	CVE-2017-3167	7.5	https://vulners.com/cve/CVE-2017-3167
+|     	CVE-2013-2249	7.5	https://vulners.com/cve/CVE-2013-2249
+|     	SSV:11802	7.1	https://vulners.com/seebug/SSV:11802	*EXPLOIT*
+|     	SSV:11762	7.1	https://vulners.com/seebug/SSV:11762	*EXPLOIT*
+|     	CVE-2009-1891	7.1	https://vulners.com/cve/CVE-2009-1891
+|     	CVE-2009-1890	7.1	https://vulners.com/cve/CVE-2009-1890
+|     	SSV:60427	6.9	https://vulners.com/seebug/SSV:60427	*EXPLOIT*
+|     	SSV:60386	6.9	https://vulners.com/seebug/SSV:60386	*EXPLOIT*
+|     	SSV:60069	6.9	https://vulners.com/seebug/SSV:60069	*EXPLOIT*
+|     	MSF:AUXILIARY/DOS/HTTP/SLOWLORIS	6.4	https://vulners.com/metasploit/MSF:AUXILIARY/DOS/HTTP/SLOWLORIS	*EXPLOIT*
+|     	SSV:60788	5.1	https://vulners.com/seebug/SSV:60788	*EXPLOIT*
+|     	SSV:61874	5.0	https://vulners.com/seebug/SSV:61874	*EXPLOIT*
+|     	SSV:20993	5.0	https://vulners.com/seebug/SSV:20993	*EXPLOIT*
+|     	SSV:20979	5.0	https://vulners.com/seebug/SSV:20979	*EXPLOIT*
+|     	SSV:20969	5.0	https://vulners.com/seebug/SSV:20969	*EXPLOIT*
+|     	PACKETSTORM:105672	5.0	https://vulners.com/packetstorm/PACKETSTORM:105672	*EXPLOIT*
+|     	PACKETSTORM:105591	5.0	https://vulners.com/packetstorm/PACKETSTORM:105591	*EXPLOIT*
+|     	MSF:AUXILIARY/SCANNER/HTTP/REWRITE_PROXY_BYPASS	5.0	https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/REWRITE_PROXY_BYPASS	*EXPLOIT*
+|     	EXPLOITPACK:460143F0ACAE117DD79BD75EDFDA154B	5.0	https://vulners.com/exploitpack/EXPLOITPACK:460143F0ACAE117DD79BD75EDFDA154B	*EXPLOIT*
+|     	EDB-ID:17969	5.0	https://vulners.com/exploitdb/EDB-ID:17969	*EXPLOIT*
+|     	SSV:11668	4.9	https://vulners.com/seebug/SSV:11668	*EXPLOIT*
+|     	SSV:11501	4.9	https://vulners.com/seebug/SSV:11501	*EXPLOIT*
+|     	SSV:30024	4.6	https://vulners.com/seebug/SSV:30024	*EXPLOIT*
+|     	EDB-ID:41768	4.6	https://vulners.com/exploitdb/EDB-ID:41768	*EXPLOIT*
+|     	1337DAY-ID-27465	4.6	https://vulners.com/zdt/1337DAY-ID-27465	*EXPLOIT*
+|     	SSV:23169	4.4	https://vulners.com/seebug/SSV:23169	*EXPLOIT*
+|     	EDB-ID:41769	4.4	https://vulners.com/exploitdb/EDB-ID:41769	*EXPLOIT*
+|     	1337DAY-ID-27473	4.4	https://vulners.com/zdt/1337DAY-ID-27473	*EXPLOIT*
+|     	SSV:60905	4.3	https://vulners.com/seebug/SSV:60905	*EXPLOIT*
+|     	SSV:60657	4.3	https://vulners.com/seebug/SSV:60657	*EXPLOIT*
+|     	SSV:60653	4.3	https://vulners.com/seebug/SSV:60653	*EXPLOIT*
+|     	SSV:60345	4.3	https://vulners.com/seebug/SSV:60345	*EXPLOIT*
+|     	SSV:4786	4.3	https://vulners.com/seebug/SSV:4786	*EXPLOIT*
+|     	SSV:3804	4.3	https://vulners.com/seebug/SSV:3804	*EXPLOIT*
+|     	SSV:30094	4.3	https://vulners.com/seebug/SSV:30094	*EXPLOIT*
+|     	SSV:30056	4.3	https://vulners.com/seebug/SSV:30056	*EXPLOIT*
+|     	SSV:2818	4.3	https://vulners.com/seebug/SSV:2818	*EXPLOIT*
+|     	SSV:2801	4.3	https://vulners.com/seebug/SSV:2801	*EXPLOIT*
+|     	SSV:24250	4.3	https://vulners.com/seebug/SSV:24250	*EXPLOIT*
+|     	SSV:20934	4.3	https://vulners.com/seebug/SSV:20934	*EXPLOIT*
+|     	SSV:20555	4.3	https://vulners.com/seebug/SSV:20555	*EXPLOIT*
+|     	SSV:19320	4.3	https://vulners.com/seebug/SSV:19320	*EXPLOIT*
+|     	PACKETSTORM:109284	4.3	https://vulners.com/packetstorm/PACKETSTORM:109284	*EXPLOIT*
+|     	EXPLOITPACK:FDCB3D93694E48CD5EE27CE55D6801DE	4.3	https://vulners.com/exploitpack/EXPLOITPACK:FDCB3D93694E48CD5EE27CE55D6801DE	*EXPLOIT*
+|     	EDB-ID:36663	4.3	https://vulners.com/exploitdb/EDB-ID:36663	*EXPLOIT*
+|     	EDB-ID:36352	4.3	https://vulners.com/exploitdb/EDB-ID:36352	*EXPLOIT*
+|     	EDB-ID:35738	4.3	https://vulners.com/exploitdb/EDB-ID:35738	*EXPLOIT*
+|     	EDB-ID:31759	4.3	https://vulners.com/exploitdb/EDB-ID:31759	*EXPLOIT*
+|     	EDB-ID:31052	4.3	https://vulners.com/exploitdb/EDB-ID:31052	*EXPLOIT*
+|     	EDB-ID:30835	4.3	https://vulners.com/exploitdb/EDB-ID:30835	*EXPLOIT*
+|     	EDB-ID:28365	4.3	https://vulners.com/exploitdb/EDB-ID:28365	*EXPLOIT*
+|     	EDB-ID:18442	4.3	https://vulners.com/exploitdb/EDB-ID:18442	*EXPLOIT*
+|     	SSV:60250	1.2	https://vulners.com/seebug/SSV:60250	*EXPLOIT*
+|     	1337DAY-ID-7972	0.0	https://vulners.com/zdt/1337DAY-ID-7972	*EXPLOIT*
+|     	1337DAY-ID-23169	0.0	https://vulners.com/zdt/1337DAY-ID-23169	*EXPLOIT*
+|_    	1337DAY-ID-12139	0.0	https://vulners.com/zdt/1337DAY-ID-12139	*EXPLOIT*
+110/tcp   open  pop3       Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5_6.4
+111/tcp   open  rpcbind    2 (RPC #100000)
+143/tcp   open  imap       Cyrus imapd 2.3.7-Invoca-RPM-2.3.7-7.el5_6.4
+443/tcp   open  ssl/https?
+879/tcp   open  status     1 (RPC #100024)
+993/tcp   open  ssl/imap   Cyrus imapd
+995/tcp   open  pop3       Cyrus pop3d
+3306/tcp  open  mysql      MySQL (unauthorized)
+4190/tcp  open  sieve      Cyrus timsieved 2.3.7-Invoca-RPM-2.3.7-7.el5_6.4 (included w/cyrus imap)
+4445/tcp  open  upnotifyp?
+4559/tcp  open  hylafax    HylaFAX 4.3.10
+5038/tcp  open  asterisk   Asterisk Call Manager 1.1
+10000/tcp open  http       MiniServ 1.570 (Webmin httpd)
+Service Info: Hosts:  beep.localdomain, 127.0.0.1, example.com, localhost; OS: Unix
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Dec  8 13:10:17 2020 -- 1 IP address (1 host up) scanned in 205.32 seconds

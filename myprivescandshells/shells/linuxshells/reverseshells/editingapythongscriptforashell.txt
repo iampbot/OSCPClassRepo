@@ -1,0 +1,2 @@
+import os
+os.system('enter reverse shell here')

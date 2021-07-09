@@ -1,0 +1,30 @@
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          52.38.176.122
++ Target Hostname:    52.38.176.122
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:        Subject:  /CN=5e073fa71b76
+                   Ciphers:  ECDHE-RSA-AES256-GCM-SHA384
+                   Issuer:   /CN=5e073fa71b76
++ Start Time:         2021-02-26 17:07:38 (GMT-5)
+---------------------------------------------------------------------------
++ Server: Apache/2.2.22 (Debian)
++ Server may leak inodes via ETags, header found with file /, inode: 537516, size: 121, mtime: Thu Nov 15 19:29:26 2018
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The site uses SSL and the Strict-Transport-Security HTTP header is not defined.
++ The site uses SSL and Expect-CT header is not present.
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ Entry '/heart.jpg' in robots.txt returned a non-forbidden or redirect HTTP code (200)
++ Uncommon header 'tcn' found, with contents: list
++ Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. See http://www.wisec.it/sectou.php?id=4698ebdc59d15. The following alternatives for 'index' were found: index.html
++ Apache/2.2.22 appears to be outdated (current is at least Apache/2.4.37). Apache 2.2.34 is the EOL for the 2.x branch.
++ The Content-Encoding header is set to "deflate" this may mean that the server is vulnerable to the BREACH attack.
++ Hostname '52.38.176.122' does not match certificate's names: 5e073fa71b76
++ Allowed HTTP Methods: GET, HEAD, POST, OPTIONS 
++ OSVDB-3233: /icons/README: Apache default file found.
++ 8735 requests: 7 error(s) and 14 item(s) reported on remote host
++ End Time:           2021-02-26 17:46:26 (GMT-5) (2328 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

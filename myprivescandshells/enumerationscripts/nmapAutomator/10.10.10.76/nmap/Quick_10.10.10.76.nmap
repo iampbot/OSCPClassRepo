@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Tue Dec 15 14:43:05 2020 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_10.10.10.76.nmap 10.10.10.76
+Nmap scan report for 10.10.10.76
+Host is up (0.064s latency).
+Not shown: 888 filtered ports, 110 closed ports
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE
+79/tcp  open  finger
+111/tcp open  rpcbind
+
+# Nmap done at Tue Dec 15 14:43:26 2020 -- 1 IP address (1 host up) scanned in 21.32 seconds

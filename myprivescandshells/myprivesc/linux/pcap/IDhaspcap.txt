@@ -1,0 +1,16 @@
+after running id and looking at privs a user can run, if pcap is allowed as such:
+
+stephen@five86-2:~$ id
+id
+uid=1002(stephen) gid=1002(stephen) groups=1002(stephen),1009(pcap)
+
+run the following commands to check if there are any hidden credentials:
+1.) ip a 
+2.) look for a network that seems out of place. eth0 tun0 lo are common so aside from those
+3.) run a tcpdump: timeout 140 tcpdump -w pbot.pcab -i veth24faf7d
+	- timeout 140 specifies the packet capture time 
+	- -w writes the capture to a file named pbot.pcab
+	- -i is the device you want to capture traffic from
+4.) tcpdump -r pbot.pcab
+	- this is like catting the pcab file and shows you the results of the capture
+5.) make sure to check the capture thoroughly credentials can sometimes be found here

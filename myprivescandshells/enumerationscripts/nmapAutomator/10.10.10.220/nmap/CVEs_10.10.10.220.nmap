@@ -1,0 +1,12 @@
+# Nmap 7.80 scan initiated Wed Dec 16 16:09:49 2020 as: nmap -Pn -sV --script vulners --script-args mincvss=7.0 -p22,5080 -oN nmap/CVEs_10.10.10.220.nmap 10.10.10.220
+Nmap scan report for 10.10.10.220
+Host is up (0.036s latency).
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
+5080/tcp open  http    nginx
+|_http-trane-info: Problem with XML parsing of /evox/about
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Dec 16 16:10:13 2020 -- 1 IP address (1 host up) scanned in 24.77 seconds

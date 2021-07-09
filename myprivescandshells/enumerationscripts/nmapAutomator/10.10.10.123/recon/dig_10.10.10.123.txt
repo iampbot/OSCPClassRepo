@@ -1,0 +1,22 @@
+
+; <<>> DiG 9.16.4-Debian <<>> -x 10.10.10.123 @10.10.10.123
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 37658
+;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 99438e5dc9f8baaf96fcb0a05fe92354346cdab975e2662c (good)
+;; QUESTION SECTION:
+;123.10.10.10.in-addr.arpa.	IN	PTR
+
+;; AUTHORITY SECTION:
+10.IN-ADDR.ARPA.	86400	IN	SOA	10.IN-ADDR.ARPA. . 0 28800 7200 604800 86400
+
+;; Query time: 39 msec
+;; SERVER: 10.10.10.123#53(10.10.10.123)
+;; WHEN: Sun Dec 27 19:05:49 EST 2020
+;; MSG SIZE  rcvd: 132
+

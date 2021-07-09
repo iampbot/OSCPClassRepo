@@ -1,0 +1,26 @@
+[0;32m---------------------Recon Recommendations----------------------
+[0m
+[0m
+[0;33mWeb Servers Recon:
+[0m
+gobuster dir -w /usr/share/wordlists/dirb/common.txt -l -t 30 -e -k -x .html,.php -u http://192.168.71.40:5357 -o recon/gobuster_192.168.71.40_5357.txt
+nikto -host 192.168.71.40:5357 | tee recon/nikto_192.168.71.40_5357.txt
+
+[0m
+[0;33mSMB Recon:
+[0m
+smbmap -H 192.168.71.40 | tee recon/smbmap_192.168.71.40.txt
+smbclient -L "//192.168.71.40/" -U "guest"% | tee recon/smbclient_192.168.71.40.txt
+nmap -Pn -p445 --script vuln -oN recon/SMB_vulns_192.168.71.40.txt 192.168.71.40
+
+[0m
+[0;33mDNS Recon:
+[0m
+host -l 192.168.71.40 192.168.71.40 | tee recon/hostname_192.168.71.40.txt
+dnsrecon -r 192.168.71.0/24 -n 192.168.71.40 | tee recon/dnsrecon_192.168.71.40.txt
+dnsrecon -r 127.0.0.0/24 -n 192.168.71.40 | tee recon/dnsrecon-local_192.168.71.40.txt
+dig -x 192.168.71.40 @192.168.71.40 | tee recon/dig_192.168.71.40.txt
+
+
+
+

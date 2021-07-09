@@ -1,0 +1,6 @@
+https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
+
+https://thecryptonian.co.uk/linux-privilege-escalation-cheat-sheet/ this one is really nice and has rce brute force and a few other cheat sheets
+
+https://cheatography.com/blacklist/cheat-sheets/linux-windows-privilege-escalation/ windows and linux
+

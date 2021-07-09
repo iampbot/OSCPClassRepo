@@ -1,0 +1,2 @@
+
+[0;33mRunning a Quick scan on 10.10.10.10

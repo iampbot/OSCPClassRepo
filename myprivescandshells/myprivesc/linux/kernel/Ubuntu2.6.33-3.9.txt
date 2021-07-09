@@ -1,0 +1,10 @@
+https://www.exploit-db.com/exploits/40616
+
+download the exploit 
+
+compile it gcc cowroot.c -o cowroot -pthread
+
+wget it onto the machine and run ./cowroot
+
+this was used in my lampiao box exploit to grab the files from there if needed
+

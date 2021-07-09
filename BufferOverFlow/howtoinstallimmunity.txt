@@ -1,0 +1,10 @@
+SETUP FOR IMMUNITY ON KALI
+
+https://debugger.immunityinc.com/ID_register.py
+download Immunity 
+sudo apt update
+sudo apt-get install wine32
+wine ImmunityDebugger_1_85_setup.exe
+wine /home/pbot/.wine/drive_c/Program\ Files/Immunity\ Inc/Immunity\ Debugger/ImmunityDebugger.exe
+sudo wine ImmunityDebugger_1_85_setup.exe
+sudo wine /home/pbot/.wine/drive_c/Program\ Files/Immunity\ Inc/Immunity\ Debugger/ImmunityDebugger.exe

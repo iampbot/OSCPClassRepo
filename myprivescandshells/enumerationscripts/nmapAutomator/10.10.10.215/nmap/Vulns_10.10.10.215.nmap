@@ -1,0 +1,38 @@
+# Nmap 7.80 scan initiated Mon Dec 21 21:28:46 2020 as: nmap -Pn -sV --script vuln -p22,80 -oN nmap/Vulns_10.10.10.215.nmap 10.10.10.215
+Nmap scan report for academy.htb (10.10.10.215)
+Host is up (0.059s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:openbsd:openssh:8.2p1: 
+|     	CVE-2020-15778	6.8	https://vulners.com/cve/CVE-2020-15778
+|     	CVE-2020-12062	5.0	https://vulners.com/cve/CVE-2020-12062
+|_    	CVE-2020-14145	4.3	https://vulners.com/cve/CVE-2020-14145
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /admin.php: Possible admin folder
+|_  /login.php: Possible admin folder
+| http-fileupload-exploiter: 
+|   
+|     Couldn't find a file-type field.
+|   
+|_    Couldn't find a file-type field.
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.41: 
+|     	CVE-2020-11984	7.5	https://vulners.com/cve/CVE-2020-11984
+|     	CVE-2020-1927	5.8	https://vulners.com/cve/CVE-2020-1927
+|     	CVE-2020-9490	5.0	https://vulners.com/cve/CVE-2020-9490
+|     	CVE-2020-1934	5.0	https://vulners.com/cve/CVE-2020-1934
+|_    	CVE-2020-11993	4.3	https://vulners.com/cve/CVE-2020-11993
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Dec 21 21:29:25 2020 -- 1 IP address (1 host up) scanned in 39.40 seconds
