@@ -6,7 +6,7 @@ ffuf -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http:
 FUZZ is where you want it to directory bruteforce
 -e is extensions (must be seperated by commas)
 
-without color:
+without color(less fun option):
 
 ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.102.39:3333/FUZZ -e .php,.html,.txt
 
