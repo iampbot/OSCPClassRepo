@@ -2,3 +2,11 @@ grep -nr -A 5 password
 
 this will grep for every instance of the word password in the current directory you are in
 it will traverse folders and files and print lines they are on and add 5 lines after each hit on the word password
+
+if output is too long change the add lines to something lower:
+
+grep -nr -A 1 password
+
+if you don't get anything from this it might be worth using a case insensitive search:
+
+grep -nr -i -A 1 password <--- I use this one the most
